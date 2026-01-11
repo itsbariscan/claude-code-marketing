@@ -1,0 +1,19 @@
+{
+  "name": "claude-code-marketing-hooks",
+  "version": "0.1.0",
+  "description": "Hooks for Claude Code Marketing plugin",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && npm run rename",
+    "rename": "for f in dist/*.js; do mv \"$f\" \"${f%.js}.mjs\"; done",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  }
+}

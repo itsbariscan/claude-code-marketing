@@ -1,0 +1,22 @@
+node_modules/
+dist/
+!hooks/dist/
+.env
+.env.*
+.DS_Store
+*.log
+coverage/
+
+# Claude Code temp/cache
+.claude/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+
+# Temp files
+*.tmp
+*.bak

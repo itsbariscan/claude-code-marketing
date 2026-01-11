@@ -1,0 +1,48 @@
+{
+  "name": "claude-code-marketing",
+  "version": "0.1.0",
+  "description": "Marketing-focused plugin for SEO, content strategy, and brand management. Works standalone with reasoning-based analysis, enhanced with optional Ahrefs/SEMrush/GSC MCP integrations.",
+  "author": "itsbariscan",
+  "license": "MIT",
+  "repository": "https://github.com/itsbariscan/claude-code-marketing",
+  "keywords": [
+    "marketing",
+    "seo",
+    "content",
+    "strategy",
+    "keywords",
+    "brand"
+  ],
+  "skills": [
+    "marketing-seo",
+    "marketing-strategy",
+    "marketing-brand"
+  ],
+  "hooks": {
+    "directory": "hooks",
+    "config": "hooks/hooks.json",
+    "build": "cd hooks && ./build.sh"
+  },
+  "postInstall": "cd hooks && npm install && npm run build",
+  "mcpServers": {
+    "note": "Optional MCP integrations - users configure separately",
+    "supported": [
+      {
+        "name": "ahrefs",
+        "package": "@ahrefs/mcp",
+        "description": "Official Ahrefs MCP for keyword/backlink data"
+      },
+      {
+        "name": "semrush",
+        "url": "https://mcp.semrush.com/v1/mcp",
+        "type": "http",
+        "description": "Official SEMrush MCP for keyword/competitor data"
+      },
+      {
+        "name": "gsc",
+        "package": "mcp-server-gsc",
+        "description": "Google Search Console MCP for rankings/performance"
+      }
+    ]
+  }
+}
